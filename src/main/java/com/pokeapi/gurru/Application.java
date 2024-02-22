@@ -1,4 +1,4 @@
-package com.jokeapi.gurru;
+package com.pokeapi.gurru;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

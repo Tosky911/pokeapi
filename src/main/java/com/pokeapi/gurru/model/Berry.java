@@ -1,13 +1,9 @@
-package com.jokeapi.gurru.model;
+package com.pokeapi.gurru.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Generated;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import com.jokeapi.gurru.model.*;
-import java.util.LinkedHashMap;
+
 import java.util.List;
-import java.util.Map;
 
 @Data
 @Entity
@@ -25,9 +21,18 @@ public class Berry {
     private Integer size;
     private Integer smoothness;
     private Integer soilDryness;
+    @ManyToOne
+    @JoinColumn(name = "firmness_id")
     private Firmness firmness;
+
+    @OneToMany
+    @JoinColumn(name = "flavors_id")
     private List<Flavor> flavors;
+    @ManyToOne
+    @JoinColumn(name = "item_id")
     private Item item;
+    @ManyToOne
+    @JoinColumn(name = "naturalGiftType_id")
     private NaturalGiftType naturalGiftType;
 
 }
